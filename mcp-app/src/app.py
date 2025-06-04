@@ -40,4 +40,5 @@ def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # 平台一般要求监听 0.0.0.0 和 8080 端口
+    app.run(host='0.0.0.0', port=8080)
