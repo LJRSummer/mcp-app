@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图像相似度检测</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>图像相似度检测</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="images" multiple required>
+            <button type="submit">上传图像</button>
+        </form>
+        {% if img_files %}
+            <h2>上传的图像</h2>
+            <div class="image-gallery">
+                {% for img in img_files %}
+                    <div class="image-item">
+                        <img src="{{ url_for('uploaded_file', filename=img) }}" alt="{{ img }}">
+                    </div>
+                {% endfor %}
+            </div>
+            <h2>相似度评分</h2>
+            <p>平均相似度评分: {{ avg_score }}</p>
+            <p>最高相似度评分: {{ max_score }} (图像: {{ max_pair[0] }} 和 {{ max_pair[1] }})</p>
+            <p>最低相似度评分: {{ min_score }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

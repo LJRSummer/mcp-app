@@ -1,0 +1,11 @@
+name: app
+version: 1.0.0
+description: A Flask application for image upload and similarity scoring.
+author: Laurelliang
+license: MIT
+dependencies:
+  - Flask
+  - Pillow
+  - imagehash
+  - Werkzeug
+entry_point: app.py
