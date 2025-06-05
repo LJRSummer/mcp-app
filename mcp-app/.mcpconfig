@@ -8,4 +8,4 @@ dependencies:
   - Pillow
   - imagehash
   - Werkzeug
-entry_point: app.py
+entry_point: app-server
