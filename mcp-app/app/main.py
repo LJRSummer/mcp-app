@@ -1,7 +1,7 @@
 import os
 from flask import render_template, request, send_from_directory
 from werkzeug.utils import secure_filename
-from main import app
+from app import app
 from app.utils.image_utils import group_similarity_score, allowed_file
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
